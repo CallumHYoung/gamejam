@@ -73,16 +73,16 @@
       "multiplayer": true
     },
     {
-      "id": "callumhyoung-fencing-duel",
-      "title": "Fencing Duel",
+      "id": "callumhyoung-tac-ops",
+      "title": "Cal-Jam Tac Ops",
       "author": "CallumHYoung",
-      "description": "3D fencing duels — challenge a nearby player, rock-paper-scissors sword fight, first to 3 wins a crown.",
+      "description": "5v5 P2P tactical shooter — pick a team, pick an agent, buy your kit, and trade rounds on a Valorant-style map.",
       "url": "https://callumhyoung.github.io/cal-jam1/",
       "repo": "CallumHYoung/cal-jam1",
       "thumbnail": "https://callumhyoung.github.io/cal-jam1/thumbnail.png",
       "type": "3d",
-      "tags": ["three.js", "3d", "multiplayer", "duel", "fencing", "trystero"],
-      "status": "ready",
+      "tags": ["three.js", "fps", "tactical", "shooter", "5v5", "trystero"],
+      "status": "wip",
       "multiplayer": true
     }
   ]
