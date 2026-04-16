@@ -59,15 +59,15 @@
       "multiplayer": false
     },
     {
-      "id": "rjballs-3d",
-      "title": "RJ's 3D Space",
+      "id": "rjballs-2d",
+      "title": "RJ's 2D Space",
       "author": "rjprkr-cloud",
-      "description": "First-person 3D void to explore — neon pillars, animated portals, and P2P multiplayer via Trystero.",
+      "description": "Top down 2D shooter balls — neon pillars, animated portals, and P2P multiplayer via Trystero.",
       "url": "https://rjprkr-cloud.github.io/RJballs/",
       "repo": "rjprkr-cloud/RJballs",
       "thumbnail": "https://rjprkr-cloud.github.io/RJballs/thumbnail.png",
       "thumbnailFlipY": true,
-      "type": "3d",
+      "type": "2d",
       "tags": ["three.js", "first-person", "walking", "multiplayer"],
       "status": "wip",
       "multiplayer": true
