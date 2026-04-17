@@ -11,9 +11,9 @@
   <img class="banner" src="banner.png" alt="Welcome to the Ordinary Game Jam #1 — Presented by Vibe Code, Friends Edition" />
   <h1 class="sr-only">Ordinary Game Jam #1</h1>
   <p class="tagline">Browser games, built with agents, stitched together by portals.</p>
-  <div class="hero-status">
-    <span class="phase-badge phase-trial-badge">TRIAL RUN</span>
-    <span class="phase-msg">Ends Saturday, Apr 18 @ 9 PM · warm-up only · don't build your real game yet</span>
+  <div class="hero-status hero-status-live">
+    <span class="phase-badge phase-live-badge"><span class="phase-live-dot"></span>THE JAM · LIVE</span>
+    <span class="phase-msg">Running through Saturday, May 23 · theme &amp; mechanic revealed by the gate below</span>
   </div>
   <nav>
     <a href="#schedule">Schedule</a>
@@ -93,24 +93,23 @@
   <section id="schedule">
     <h2>Schedule</h2>
     <div class="timeline">
-      <div class="timeline-phase timeline-trial">
-        <div class="phase-tag">TRIAL RUN · wrapping up</div>
-        <div class="phase-dates">Now → Friday, Apr 17 @ 12 PM</div>
-        <h3>Warm up and get weird</h3>
-        <p>This week is a trial run. <strong>Don't build your real game yet.</strong> Use this time to:</p>
-        <ul>
-          <li>Get the starter template working end-to-end</li>
-          <li>Get comfortable building a game with Claude</li>
-          <li>Mess around, break things, submit something silly</li>
-          <li>Have fun</li>
-        </ul>
-      </div>
-      <div class="timeline-phase timeline-real">
-        <div class="phase-tag">THE REAL JAM</div>
-        <div class="phase-dates">Friday, Apr 17 @ 12 PM → Saturday, May 23</div>
+      <aside class="timeline-phase timeline-trial timeline-archived">
+        <div class="phase-tag">TRIAL · ARCHIVED</div>
+        <div class="phase-dates">Ended Fri, Apr 17 @ 12 PM</div>
+        <h3>Warm-up complete</h3>
+        <p>A separate portal network of silly warm-up builds from last week.</p>
+        <a class="timeline-archive-link" href="trial.html">View archive <span aria-hidden="true">→</span></a>
+      </aside>
+      <article class="timeline-phase timeline-real timeline-featured-card">
+        <div class="phase-tag phase-tag-live">
+          <span class="phase-live-dot"></span>
+          THE REAL JAM · HAPPENING NOW
+        </div>
+        <div class="phase-dates">Friday, Apr 17 @ 12 PM → Saturday, May 23 · 5 weeks</div>
         <h3>One theme. One mechanic. Five weeks.</h3>
-        <p>The <strong>theme</strong> and <strong>mechanic</strong> are sealed until the gate opens above. Start planning after you see them — build something you're proud to show off.</p>
-      </div>
+        <p>The <strong>theme</strong> and <strong>mechanic</strong> unlock from the gate above the moment the jam begins. Pick a stack, build something you're proud to show off, and plug your game into the <a href="#network">portal network</a>.</p>
+        <p class="timeline-meta">$500 in prizes · public repo required · submit to <code>jam1.json</code></p>
+      </article>
     </div>
   </section>
 
