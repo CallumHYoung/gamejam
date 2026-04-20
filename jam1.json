@@ -72,16 +72,29 @@
       "multiplayer": true
     },
     {
-  "id": "downward",
-  "title": "Downward",
-  "author": "Prez",
-  "description": "A game about descent, and the meaning you find on the way up.",
-  "url": "https://prstnv.github.io/jammy-pwez/",
-  "repo": "prstnv/jammy-pwez",
-  "thumbnail": "https://prstnv.github.io/jammy-pwez/thumbnail.png",
-  "type": "3d",
-  "tags": ["Platformer", "Single Player", "AAA"],
-  "status": "wip"
-}
+      "id": "downward",
+      "title": "Downward",
+      "author": "Prez",
+      "description": "A game about descent, and the meaning you find on the way up.",
+      "url": "https://prstnv.github.io/jammy-pwez/",
+      "repo": "prstnv/jammy-pwez",
+      "thumbnail": "https://prstnv.github.io/jammy-pwez/thumbnail.png",
+      "type": "3d",
+      "tags": ["Platformer", "Single Player", "AAA"],
+      "status": "wip"
+    },
+    {
+      "id": "calware",
+      "title": "CalWare",
+      "author": "Callum",
+      "description": "3D WarioWare-style microgame brawler — P2P multiplayer, last one standing wins",
+      "url": "https://callumhyoung.github.io/calware/",
+      "repo": "CallumHYoung/calware",
+      "thumbnail": "https://callumhyoung.github.io/calware/thumbnail.png",
+      "type": "3d",
+      "tags": ["microgames", "multiplayer", "three.js", "warioware"],
+      "status": "wip",
+      "multiplayer": true
+    }
   ]
 }
