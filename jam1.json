@@ -84,6 +84,19 @@
       "status": "wip"
     },
     {
+      "id": "gantz",
+      "title": "Gantz",
+      "author": "mango-virus",
+      "description": "P2P multiplayer first-person roguelike — survive alien missions, earn points, don't die",
+      "url": "https://mango-virus.github.io/gantz/",
+      "repo": "mango-virus/gantz",
+      "thumbnail": "https://mango-virus.github.io/gantz/thumbnail.png",
+      "type": "3d",
+      "tags": ["multiplayer", "roguelike", "fps", "three.js", "p2p"],
+      "status": "wip",
+      "multiplayer": true
+    },
+    {
       "id": "calware",
       "title": "CalWare",
       "author": "Callum",
