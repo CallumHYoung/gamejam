@@ -121,6 +121,19 @@
       "tags": ["rpg", "roguelite", "turn-based"],
       "status": "wip",
       "multiplayer": false
+    },
+    {
+      "id": "quest-failed",
+      "title": "Quest Failed",
+      "author": "mango-virus",
+      "description": "Reverse roguelike — you're the dungeon Boss. Build by night, watch adventurers die by day.",
+      "url": "https://mango-virus.github.io/Quest-Failed/",
+      "repo": "mango-virus/Quest-Failed",
+      "thumbnail": "https://mango-virus.github.io/Quest-Failed/thumbnail.png",
+      "type": "2d",
+      "tags": ["roguelike", "dungeon", "strategy", "phaser"],
+      "status": "wip",
+      "multiplayer": false
     }
   ]
 }
