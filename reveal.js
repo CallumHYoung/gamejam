@@ -2,11 +2,10 @@
   // Evaluated in the viewer's local timezone, so everyone on a shared timezone
   // sees the gate open at the same wallclock moment. No explicit TZ offset.
   const REVEAL_AT_DEFAULT = new Date(2026, 3, 17, 12, 0, 0).getTime(); // Fri Apr 17, 2026 @ 12:00 PM local
-  const END_AT_DEFAULT   = new Date(2026, 4, 23, 23, 59, 0).getTime(); // Sat May 23, 2026 @ 11:59 PM local
+  const JUDGE_END_AT      = new Date(2026, 4, 30, 15, 0, 0).getTime(); // Sat May 30, 2026 @ 3:00 PM local
 
-  // Jam-end countdown in the featured real-jam card — independent of gate state.
-  (function setupEndCountdown() {
-    const container = document.getElementById('jam-end-countdown');
+  function setupCountdown(containerId, targetAt, endedLabel, endedTarget) {
+    const container = document.getElementById(containerId);
     if (!container) return;
     const cd = {
       days:    container.querySelector('[data-cd="days"]'),
@@ -18,11 +17,11 @@
     const targetEl = container.querySelector('.jam-cd-target');
     const pad = n => String(n).padStart(2, '0');
     function tick() {
-      const diff = END_AT_DEFAULT - Date.now();
+      const diff = targetAt - Date.now();
       if (diff <= 0) {
         container.dataset.state = 'ended';
-        if (labelEl) labelEl.textContent = 'Submissions closed';
-        if (targetEl) targetEl.textContent = 'The jam is over — thanks for playing.';
+        if (labelEl && endedLabel) labelEl.textContent = endedLabel;
+        if (targetEl && endedTarget) targetEl.textContent = endedTarget;
         cd.days.textContent = '00';
         cd.hours.textContent = '00';
         cd.minutes.textContent = '00';
@@ -37,7 +36,9 @@
     }
     tick();
     const t = setInterval(() => { if (!tick()) clearInterval(t); }, 1000);
-  })();
+  }
+
+  setupCountdown('judge-end-countdown', JUDGE_END_AT, 'Judging closed', 'Scores locked — winners coming soon.');
 
   // Theme + mechanic payload, base64-encoded so the reveal is not visible
   // in page source before the gate opens.

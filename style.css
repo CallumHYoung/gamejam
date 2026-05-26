@@ -375,10 +375,22 @@ footer a:hover { color: var(--accent2); }
   align-items: stretch;
 }
 
+.timeline-three {
+  grid-template-columns: minmax(180px, 1fr) minmax(180px, 1fr) minmax(0, 2.5fr);
+}
+
+@media (max-width: 980px) {
+  .timeline-three { grid-template-columns: 1fr 1fr; }
+  .timeline-three .timeline-featured-card { grid-column: 1 / -1; order: 1; }
+  .timeline-three .timeline-archived { order: 2; }
+}
+
 @media (max-width: 780px) {
   .timeline { grid-template-columns: 1fr; gap: 0.85rem; }
+  .timeline-three { grid-template-columns: 1fr; }
   .timeline-archived { order: 2; }
   .timeline-featured-card { order: 1; }
+  .timeline-three .timeline-featured-card { grid-column: auto; }
 }
 
 .timeline-phase {
@@ -419,6 +431,47 @@ footer a:hover { color: var(--accent2); }
 
 .timeline-trial .phase-tag { color: #ffd84f; }
 .timeline-real  .phase-tag { color: #c64bff; }
+.timeline-judging .phase-tag { color: #4fff9e; }
+
+.timeline-judging {
+  border-color: rgba(79, 255, 158, 0.6);
+  background:
+    radial-gradient(ellipse at top right, rgba(79,255,158,0.14), transparent 70%),
+    radial-gradient(ellipse at bottom left, rgba(79,240,255,0.08), transparent 70%),
+    var(--card);
+}
+
+.timeline-judging.timeline-featured-card {
+  border-color: rgba(79, 255, 158, 0.8);
+  background:
+    radial-gradient(ellipse at top right, rgba(79,255,158,0.22), transparent 65%),
+    radial-gradient(ellipse at bottom left, rgba(79,240,255,0.14), transparent 70%),
+    var(--card);
+  box-shadow:
+    0 0 60px -15px rgba(79, 255, 158, 0.5),
+    inset 0 0 0 1px rgba(79, 255, 158, 0.25);
+}
+
+.timeline-judging.timeline-featured-card::after {
+  background: radial-gradient(ellipse at center, rgba(79,255,158,0.12), transparent 60%);
+}
+
+.timeline-judging.timeline-featured-card h3 {
+  background: linear-gradient(90deg, #fff, #4fff9e, #4ff0ff, #fff);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.timeline-judging .jam-countdown-judge {
+  border-color: rgba(79,255,158,0.45);
+  box-shadow: inset 0 0 0 1px rgba(79,255,158,0.1), 0 0 22px -10px rgba(79,255,158,0.55);
+}
+
+.timeline-judging .jam-countdown-judge .jam-cd-label { color: #4fff9e; }
+.timeline-judging .jam-countdown-judge .jam-cd-num   { text-shadow: 0 0 10px rgba(79,255,158,0.7); }
+.timeline-judging .jam-countdown-judge .jam-cd-sep   { color: rgba(79,255,158,0.55); }
 
 .timeline-phase .phase-dates {
   font-size: 0.8rem;
@@ -882,6 +935,158 @@ footer a:hover { color: var(--accent2); }
 .prize-card em {
   color: var(--accent2);
   font-style: italic;
+}
+
+/* ---------- Judging ---------- */
+
+#judging h2 { margin-bottom: 0.35rem; }
+
+.judging-sub {
+  color: var(--muted);
+  margin: 0 0 1.25rem;
+  font-size: 0.95rem;
+}
+
+.judging-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(220px, 1fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+@media (max-width: 780px) {
+  .judging-grid { grid-template-columns: 1fr; }
+}
+
+.judging-card {
+  position: relative;
+  padding: 1.5rem 1.6rem 1.4rem;
+  border: 1px solid rgba(79,255,158,0.5);
+  border-radius: 14px;
+  background:
+    radial-gradient(ellipse at top left, rgba(79,255,158,0.12), transparent 70%),
+    var(--card);
+  overflow: hidden;
+}
+
+.judging-card-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: #4fff9e;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid rgba(79,255,158,0.55);
+  border-radius: 999px;
+  background: rgba(79,255,158,0.08);
+  margin-bottom: 1rem;
+}
+
+.judging-steps {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.judging-steps li { margin-bottom: 0.55rem; }
+.judging-steps li:last-child { margin-bottom: 0; }
+.judging-steps li strong { color: var(--fg); margin-right: 0.25rem; }
+.judging-steps li a { color: var(--accent2); }
+.judging-steps li a:hover { color: var(--accent); }
+
+.judging-cats {
+  list-style: none;
+  padding: 0.75rem 0 0.2rem;
+  margin: 0.5rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem 1rem;
+}
+
+@media (max-width: 540px) {
+  .judging-cats { grid-template-columns: 1fr; }
+}
+
+.judging-cats li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  margin: 0;
+  min-width: 0;
+}
+
+.judging-cat-tag {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #4fff9e;
+  padding: 0.22rem 0.6rem;
+  border: 1px solid rgba(79,255,158,0.55);
+  border-radius: 999px;
+  background: rgba(79,255,158,0.08);
+  flex-shrink: 0;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.judging-cat-sub {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.25;
+  min-width: 0;
+}
+
+.judging-card-deadline {
+  border-color: rgba(255, 216, 79, 0.55);
+  background:
+    radial-gradient(ellipse at top right, rgba(255,216,79,0.16), transparent 70%),
+    var(--card);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.judging-card-deadline .judging-card-tag {
+  color: #ffd84f;
+  border-color: rgba(255,216,79,0.6);
+  background: rgba(255,216,79,0.08);
+}
+
+.judging-deadline-time {
+  font-size: clamp(1.4rem, 3vw, 1.7rem);
+  font-weight: 700;
+  color: var(--fg);
+  letter-spacing: -0.01em;
+}
+
+.judging-deadline-clock {
+  font-size: clamp(2.4rem, 6vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: linear-gradient(180deg, #fff, #ffd84f 60%, #ff9f1a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 24px rgba(255, 216, 79, 0.45);
+  letter-spacing: -0.02em;
+  margin: 0.15rem 0 0.55rem;
+}
+
+.judging-deadline-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  max-width: 280px;
 }
 
 /* ---------- Portal network ---------- */
@@ -1723,6 +1928,13 @@ footer {
   background: #4fff9e;
   box-shadow: 0 0 10px #4fff9e;
   animation: status-pulse 1.4s ease-in-out infinite;
+}
+
+.reveal-live-badge-ended {
+  color: var(--muted);
+  border-color: rgba(168, 155, 209, 0.45);
+  background: rgba(168, 155, 209, 0.06);
+  box-shadow: none;
 }
 
 .reveal-unlocked-title {

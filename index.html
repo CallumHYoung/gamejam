@@ -12,11 +12,12 @@
   <h1 class="sr-only">Ordinary Game Jam #1</h1>
   <p class="tagline">Browser games, built with agents, stitched together by portals.</p>
   <div class="hero-status hero-status-live">
-    <span class="phase-badge phase-live-badge"><span class="phase-live-dot"></span>THE JAM · LIVE</span>
-    <span class="phase-msg">Running through Saturday, May 23 · theme &amp; mechanic revealed by the gate below</span>
+    <span class="phase-badge phase-live-badge"><span class="phase-live-dot"></span>JUDGING · LIVE</span>
+    <span class="phase-msg">Anonymous scoring on Discord through Saturday, May 30 @ 3:00 PM</span>
   </div>
   <nav>
     <a href="#schedule">Schedule</a>
+    <a href="#judging">Judging</a>
     <a href="#prizes">Prizes</a>
     <a href="#network">Network</a>
     <a href="#competitors">Competitors</a>
@@ -70,7 +71,7 @@
 
       <div class="reveal-unlocked-panel" hidden>
         <div class="reveal-unlocked-head">
-          <span class="reveal-live-badge"><span class="reveal-live-dot"></span>THE JAM IS LIVE</span>
+          <span class="reveal-live-badge reveal-live-badge-ended">THE JAM HAS ENDED</span>
           <h2 class="reveal-unlocked-title">The Reveal</h2>
           <p class="reveal-unlocked-sub">One theme. One mechanic. Builds are due <strong>Saturday, May 23</strong>.</p>
         </div>
@@ -92,7 +93,7 @@
 
   <section id="schedule">
     <h2>Schedule</h2>
-    <div class="timeline">
+    <div class="timeline timeline-three">
       <aside class="timeline-phase timeline-trial timeline-archived">
         <div class="phase-tag">TRIAL · ARCHIVED</div>
         <div class="phase-dates">Ended Fri, Apr 17 @ 12 PM</div>
@@ -100,16 +101,22 @@
         <p>A separate portal network of silly warm-up builds from last week.</p>
         <a class="timeline-archive-link" href="trial.html">View archive <span aria-hidden="true">→</span></a>
       </aside>
-      <article class="timeline-phase timeline-real timeline-featured-card">
+      <aside class="timeline-phase timeline-real timeline-archived">
+        <div class="phase-tag">THE JAM · CLOSED</div>
+        <div class="phase-dates">Apr 17 → Sat, May 23 · 5 weeks</div>
+        <h3>Submissions closed</h3>
+        <p>Five weeks, one theme, one mechanic. Builds are locked — see them in the <a href="#games">jam grid</a>.</p>
+      </aside>
+      <article class="timeline-phase timeline-judging timeline-featured-card">
         <div class="phase-tag phase-tag-live">
           <span class="phase-live-dot"></span>
-          THE REAL JAM · HAPPENING NOW
+          JUDGING · HAPPENING NOW
         </div>
-        <div class="phase-dates">Friday, Apr 17 @ 12 PM → Saturday, May 23 · 5 weeks</div>
-        <h3>One theme. One mechanic. Five weeks.</h3>
-        <p>The <strong>theme</strong> and <strong>mechanic</strong> unlock from the gate above the moment the jam begins. Pick a stack, build something you're proud to show off, and plug your game into the <a href="#network">portal network</a>.</p>
-        <div class="jam-countdown" id="jam-end-countdown" role="timer" aria-live="polite">
-          <div class="jam-cd-label">Submissions close in</div>
+        <div class="phase-dates">Sun, May 24 → Saturday, May 30 @ 3:00 PM · 1 week</div>
+        <h3>Gymnastics-style scoring.</h3>
+        <p>Every participant scores every other game on Discord — anonymously. Drop the top and bottom score, average the rest. A Claude agent submits an independent score too, treated as just another judge. Full rules in the <a href="#judging">judging</a> section.</p>
+        <div class="jam-countdown jam-countdown-judge" id="judge-end-countdown" role="timer" aria-live="polite">
+          <div class="jam-cd-label">Scoring closes in</div>
           <div class="jam-cd-blocks">
             <div class="jam-cd"><span class="jam-cd-num" data-cd="days">--</span><span class="jam-cd-lbl">days</span></div>
             <div class="jam-cd-sep">:</div>
@@ -119,16 +126,58 @@
             <div class="jam-cd-sep">:</div>
             <div class="jam-cd"><span class="jam-cd-num" data-cd="seconds">--</span><span class="jam-cd-lbl">sec</span></div>
           </div>
-          <div class="jam-cd-target">Saturday, May 23 @ 11:59 PM (your local time)</div>
+          <div class="jam-cd-target">Saturday, May 30 @ 3:00 PM (your local time)</div>
         </div>
-        <p class="timeline-meta">$500 in prizes · public repo required · submit to <code>jam1.json</code></p>
+        <p class="timeline-meta">$500 in prizes · scores submitted via Discord DM</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="judging">
+    <h2>Judging</h2>
+    <p class="judging-sub">Gymnastics-style scoring, run on Discord. Anonymous, simple, hard to game.</p>
+    <div class="judging-grid">
+      <article class="judging-card">
+        <div class="judging-card-tag">HOW IT WORKS</div>
+        <ol class="judging-steps">
+          <li><strong>Play every game but your own.</strong> Step through the <a href="#network">portal network</a> and give each game a fair shake.</li>
+          <li>
+            <strong>Score 4 categories per game.</strong> DM your ratings on Discord — anonymous, no votes for your own game.
+            <ul class="judging-cats">
+              <li>
+                <span class="judging-cat-tag">CREATIVITY</span>
+                <span class="judging-cat-sub">Most Creative</span>
+              </li>
+              <li>
+                <span class="judging-cat-tag">THEME</span>
+                <span class="judging-cat-sub">Best Implementation of the Theme</span>
+              </li>
+              <li>
+                <span class="judging-cat-tag">MECHANIC</span>
+                <span class="judging-cat-sub">Best Implementation of the Mechanic</span>
+              </li>
+              <li>
+                <span class="judging-cat-tag">FEEL</span>
+                <span class="judging-cat-sub">Best Feel</span>
+              </li>
+            </ul>
+          </li>
+          <li><strong>Drop top &amp; bottom, average the rest.</strong> For each category on each game, the highest and lowest scores are tossed and the middle scores are averaged.</li>
+          <li><strong>One Claude agent judges too.</strong> An independent AI judge plays through and scores every game across all 4 categories. Its scores drop into the pool as one more judge.</li>
+        </ol>
+      </article>
+      <article class="judging-card judging-card-deadline">
+        <div class="judging-card-tag">DEADLINE</div>
+        <div class="judging-deadline-time">Sat, May 30</div>
+        <div class="judging-deadline-clock">3:00 PM</div>
+        <p class="judging-deadline-note">Scores submitted after this lock won't count. Winners revealed shortly after.</p>
       </article>
     </div>
   </section>
 
   <section id="prizes">
     <h2>Prizes</h2>
-    <p class="prizes-sub">$500 total purse. Winners decided by a vote after submissions close.</p>
+    <p class="prizes-sub">$500 total purse. Winners decided by <a href="#judging">gymnastics-style scoring</a> — drop top and bottom, average the rest.</p>
     <div class="prize-grand">
       <div class="prize-grand-inner">
         <div class="prize-grand-rank">GRAND PRIZE</div>
